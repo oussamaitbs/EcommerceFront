@@ -1,3 +1,22 @@
+
+
+
+  var storedNames = JSON.parse(window.localStorage.getItem("prod"));
+ 
+  if(storedNames!=null)
+  {
+      var ShopNumber=storedNames.length;
+  
+  }
+  else
+  {
+      var ShopNumber=0;
+  
+  }
+
+
+  document.getElementById('shop').innerHTML=ShopNumber;
+
 class Person {
     constructor(name="",img="",price=18,reviews=0){
         this.name=name;
@@ -30,7 +49,7 @@ function createImageNode(imgSrc) {
     return img;
 }
 
-persons.forEach(person => {
+storedNames.forEach(person => {
 
     arrayImagesElement.innerHTML+=
     ' <div class="swiper-slide"> '+

@@ -95,7 +95,7 @@ else{
        }
        else if(pass.value=="admin123"&&email.value=="admin@gmail.com")
      {
-      window.location.href = 'index.html';
+      window.location.href = 'admin.html';
 
      }
       else{

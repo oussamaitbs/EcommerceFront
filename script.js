@@ -1,6 +1,16 @@
 
+  var storedNames = JSON.parse(window.localStorage.getItem("prod"));
+ 
+if(storedNames!=null)
+{
+    var ShopNumber=storedNames.length;
 
+}
+else
+{
+    var ShopNumber=0;
 
+}
 class Person {
 
     constructor(name="",img="",price=18,reviews=0){
@@ -12,7 +22,7 @@ class Person {
   }
 
  var user =window.localStorage.getItem("users");
- 
+ document.getElementById('shop').innerHTML=ShopNumber;
  
 var images = ['images/oussama.jpg','images/firase.jpg','images/cat-1.jpg','images/cat-2.jpg'];
 var arrayImagesElement = document.getElementById("arrayImages");
@@ -23,30 +33,36 @@ oussama1=new Person("firas abl","images/firase.jpg",36,400);
 var persons=[];
 persons.push(oussama);
 persons.push(oussama1);
-function savedata(persone1)
+var produits = [];
+function savedata(i)
 { 
-     var produit = [];
-     var prod = window.localStorage.getItem("prod");
+    console.log(i);
+
+     if(!produits.includes(persons[i]))
+     { 
+            console.log(produits);
+            produits.push(persons[i]);
+            ShopNumber=ShopNumber+1;
+            document.getElementById('shop').innerHTML=ShopNumber;
+        
+        } 
      
-
-     if(persone1!=null )
-     {produit.push(prod);
-        produit.push(persone1);
-        localStorage.setItem("prod", JSON.stringify(produit));
-     }
-
-    
-  
-  var storedNames = JSON.parse(window.localStorage.getItem("prod"));
-  for (let i = 0; i < storedNames.length; i++) {
-
-  console.log(storedNames)
-   
-
-}
-
-}
  
+
+}
+ function StorageSave ()
+ {
+    for (let i = 0; i < produits.length; i++) {
+
+        console.log(produits[i]);
+         
+      
+      }
+    if(produits!=null )
+    {
+         localStorage.setItem("prod", JSON.stringify(produits));
+    }
+ }
 
 for (let i = 0; i < persons.length; i++) {
 
@@ -67,19 +83,12 @@ for (let i = 0; i < persons.length; i++) {
     
             '<h3>'+persons[i].name+' </h3>'+
             '<div class="price">$15.99 <span>$'+persons[i].price+' </span></div>'+
-            '<a     class="btn">add to cart</a>'+
+            '<a  onclick="savedata(\''+i+'\')" class="btn">add to cart</a>'+
        ' </div>'
   '  </div>'
 '</div>';
     
-var j=0;
-document.querySelectorAll('.btn').forEach(link =>{
-    link.onclick =()=>{
-        savedata(persons[j]);
-        j++;
-    }
-
-});
+ 
 }
  
 
