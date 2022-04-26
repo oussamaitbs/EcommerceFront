@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet js</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+ 
+
+</head>
+<body>
+    
+ 
+<header>
+
+    <a href="index.html" class="logo">Fahion<span>.</span></a>
+
+    <form action="">
+        <input type="text" id="searchinput">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <div id="theme-toggler" class="fas fa-moon"></div>
+         <a href="Panier.html" id="panier" class="fas fa-shopping-cart"></a>
+        <a href="login.html"  class="fas fa-user"></a>
+    </div>
+
+</header>
+<div class="suggestions" id="suggestions">
+     
+</div>
+ 
+ 
+
+<nav class="navbar">
+
+    <div class="user">
+        <img src="images/oussama.jpg" alt="">
+        <h3 class="h3" id="value1">oussama</h3>
+        <h3 class="h3" id="value2">oussama</h3>
+
+    </div>
+
+    <div class="links">
+        <a href="index.html" >Home</a>
+         <a href="Panier.html"  >Panier</a>
+ 
+    </div>
+
+    <div id="close" class="fas fa-times"></div>
+
+</nav>
+
+ 
+<section class="products"  id="products">
+
+<div class="swiper-container  product-slider gap "id="Prod">
+    <div class="swiper-wrapper" id="arrayImages">
+       
+   
+      
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+</section>
+
+<div id="box">
+    <img src="images/firase.jpg" class="imageBox" height="645px" width="1180x" alt="">
+    
+    <a  onclick="test()" class="close">close</a>
+    
+    
+    </div>
+
+ 
+ 
+     
+        
+     
+        
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Chekout : 56$</button>
+        
+ 
+      
+ 
+ 
+
+ 
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link -->
+<script src="panier.js"></script>
+
+</body>
+</html>
